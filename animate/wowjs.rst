@@ -26,13 +26,13 @@ WOW.js
      new WOW().init();
     </script>
 
-`WOW.js` 根据 `.wow` 类标记需要添加动画效果的元素 ::
+`WOW.js` 根据 `.wow` 类标记需要添加动画效果的元素： ::
 
     <div class="wow">
       Content to Reveal Here
     </div>
 
-再通过特定的类型设置动画类型，比如 `bounceInUp` 可以设置 `自上而下的反弹效果 <http://gh.windrunner.info/z42-doc/animate/wow.html#bounceInUp>`_ ::
+再通过特定的类型设置动画类型，比如 `bounceInUp` 可以设置 `自上而下的反弹效果 <http://gh.windrunner.info/z42-doc/animate/wow.html#bounceInUp>`_ ： ::
 
     <div class="wow bounceInUp">
       Content to Reveal Here
@@ -85,7 +85,7 @@ When the user scrolls and reach this distance the hidden box is revealed.
 相关链接
 --------
 
-`英文文档<http://mynameismatthieu.com/WOW/docs.html>`_
-`官网及示例<http://mynameismatthieu.com/WOW/index.html>`_
-`GitHub<https://github.com/matthieua/WOW>`_
+`英文文档 <http://mynameismatthieu.com/WOW/docs.html>`_
+`官网及示例 <http://mynameismatthieu.com/WOW/index.html>`_
+`GitHub <https://github.com/matthieua/WOW>`_
 
