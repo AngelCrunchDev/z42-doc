@@ -9,7 +9,7 @@ from docutils.utils import get_source_line
 
 def _warn_node(self, msg, node):
     """ Monkey patch to ignore specific errors """
-    if not msg.startswith(('py:obj reference target not found',)):
+    if not msg.startswith(('py:obj reference target not found', 'nonlocal image URI found')):
         self._warnfunc(msg, '%s:%s' % get_source_line(node))
 
 sphinx.environment.BuildEnvironment.warn_node = _warn_node

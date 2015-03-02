@@ -1,11 +1,4 @@
-==============
-天使汇开发指南
-==============
-
-作者: 王然 kxxoling@gmail.com
-
-.. literalinclude:: README.rst
-    :language: rst
+.. include:: README.rst
 
 
 .. toctree::
