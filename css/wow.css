@@ -13,7 +13,18 @@
 }
 
 .expl-block {
+    color: #ddd;
     margin: 20px;
     width: 160px;
     height: 150px;
+}
+
+.bg-indigo {
+    background: #303F9F;
+}
+.bg-purple {
+    background: #512DA8;
+}
+.bg-green {
+    background: #388E3C;
 }
