@@ -1,4 +1,4 @@
-.. _wowj:
+.. _wowjs:
 
 =======
 WOW.js
@@ -6,8 +6,8 @@ WOW.js
 
 :作者: 王然 kxxoling@gmail.com
 
-WOW.js
--------
+简介
+----
 
 `WOW.js <https://github.com/matthieua/WOW>`_ 是一个基于 `animate.css` 的动画效果库，使用简单。
 
