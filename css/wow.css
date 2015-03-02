@@ -1,0 +1,19 @@
+.rwby {
+    width: 100px;
+    height: 100px;
+}
+
+.block {
+    display: block;
+}
+
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.expl-block {
+    margin: 20px;
+    width: 150px;
+    height: 150px;
+}
