@@ -4,9 +4,9 @@ all: sphinx
 BUILD_DIR=_build
 SPHINXOPTS=-n -W -d $(BUILD_DIR)/doctrees .
 
-.PHONY: sphinx
-sphinx:
-	sphinx-build -b html $(SPHINXOPTS) $(BUILD_DIR)html
+.PHONY: html
+html:
+	sphinx-build -b html $(SPHINXOPTS) $(BUILD_DIR)/html
 
 .PHONY: coverage
 coverage:
