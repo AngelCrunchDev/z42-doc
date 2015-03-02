@@ -3,6 +3,17 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath(".."))
 
+import sphinx.environment
+from docutils.utils import get_source_line
+
+
+def _warn_node(self, msg, node):
+""" Monkey patch to ignore nonlocal image error """
+    if not msg.startswith('nonlocal image URI found:'):
+        self._warnfunc(msg, '%s:%s' % get_source_line(node))
+
+sphinx.environment.BuildEnvironment.warn_node = _warn_node
+
 master_doc = "index"
 
 project = "z42-doc"
