@@ -4,7 +4,7 @@
 hg 简明教程
 ===========
 
-:作者: 王然 kxxoling@gmail.com
+作者: 王然 kxxoling@gmail.com
 
 
 关于 hg
@@ -22,12 +22,12 @@ hg 基本流程
 以 42web https://bitbucket.org/zuroc/42web 为例，演示 hg 开发流程。
 
 1. 从远程仓库复制到本地
-   https 协议从远程仓库获取代码::
+    https 协议从远程仓库获取代码::
 
         hg clone https://bitbucket.org/zuroc/42web
-   
-   或者也可以通过 ssh 协议::
-    
+
+    或者也可以通过 ssh 协议::
+
         hg clone ssh://hg@bitbucket.org/zuroc/42web
 
 #. 添加新创建的文件::
@@ -35,35 +35,35 @@ hg 基本流程
         hg add file_name
 
 #. 修改本地代码并提交
-   
-   保存修改后，提交本地代码：::
-   
+
+    保存修改后，提交本地代码：::
+
         hg commit -m "change log"
-   
-   或者也可以简写为：::
+
+    或者也可以简写为：::
 
         hg ci -m "change log"
 
-   -m 表示关于本次提交的相关信息
+    -m 表示关于本次提交的相关信息
 
-   commit 时 hg 会自动 add 代码库中已修改的文件。
+    commit 时 hg 会自动 add 代码库中已修改的文件。
 
 
 #. 提交到远程仓库前，首先检查远程代码状态
 
-   可以使用 hg diff branches 查看不同分支间差异
+    可以使用 hg diff branches 查看不同分支间差异
 
-   使用 hg fetch 命令从其它分支拉取代码并合并，如合并代码出现问题，
-   需要手动合并后再提交。
+    使用 hg fetch 命令从其它分支拉取代码并合并，如合并代码出现问题，
+    需要手动合并后再提交。
 
 
 #. 将代码提交到远程仓库::
-    
-   hg push
+
+    hg push
 
 #. 发起 pull request
-   
-   在 https://bitbucket.org/你的用户名/42web/pull-request/new 发起一个新的 pull request
+
+    在 https://bitbucket.org/你的用户名/42web/pull-request/new 发起一个新的 pull request
 
 
 解决冲突

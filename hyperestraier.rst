@@ -1,4 +1,4 @@
-.. _hg_tutorial: 
+.. hyper_estraier:
 
 ==================================================
 Hyper Estraier 简明教程
@@ -6,9 +6,9 @@ Hyper Estraier 简明教程
 
 :作者: tonghs tonghuashuai@gmail.com
 
-About 
+About
 ----------------------
-Hyper Estraier is a full-text search system. You can search lots of documents for some documents including specified words. If you run a web site, it is useful as your own search engine for pages in your site. Also, it is useful as search utilities of mail boxes and file servers. 
+Hyper Estraier is a full-text search system. You can search lots of documents for some documents including specified words. If you run a web site, it is useful as your own search engine for pages in your site. Also, it is useful as search utilities of mail boxes and file servers.
 
 http://fallabs.com/hyperestraier/
 
@@ -28,21 +28,21 @@ Configuration
 
 #. 设置路径读写权限
 #. 在工作目录下执行::
-   
+
     estmaster init .
 
-#. 删除工作目录下的配置文件，并执行:: 
-   
+#. 删除工作目录下的配置文件，并执行::
+
     ln -s ~/42web/zapp/SITE/misc/config/hyperestraier/_conf .
 
-#. 启动 hyperestraier:: 
+#. 启动 hyperestraier::
 
     estmaster start .
 
 #. 启动服务::
-   
-   zapp/SITE/model/rpc/server/run.py
-   zapp/SITE/model/rpc/server/search.py
+
+    zapp/SITE/model/rpc/server/run.py
+    zapp/SITE/model/rpc/server/search.py
 
 #. 访问 http://域名:1978，进入 web 管理页面（默认用户名密码 admin admin）
 

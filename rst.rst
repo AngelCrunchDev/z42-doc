@@ -1,6 +1,4 @@
-
-
-.. _rst_tutorial: 
+.. _rst_tutorial:
 
 ==================================================
 reStructuredText简明教程
@@ -9,7 +7,7 @@ reStructuredText简明教程
 :作者: 刘斗 redfork@gmail.com
 
 
-图形化 web 编辑工具： `rst.ninjs.org <http://rst.ninjs.org/>`_ 
+图形化 web 编辑工具： `rst.ninjs.org <http://rst.ninjs.org/>`_
 
 段落
 -----------------------
@@ -277,8 +275,6 @@ REST 是松散的文本结构，使用预定义的模式描述文章的结构。
 
 .. literalinclude:: example.py
     :language: python
-
-
 
 
 章节

@@ -6,5 +6,5 @@ MongoDb
     :glob:
     :maxdepth: 2
 
-    html
+    *
 

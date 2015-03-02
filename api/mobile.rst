@@ -1,11 +1,11 @@
-==================================================
+====================
 手机 API (version 2)
-==================================================
+====================
 
 作者:  tonghs tonghuashuai@gmail.com
 
 简介
-======================
+====================
 
 改版以后的新接口。
 
@@ -211,7 +211,7 @@ return::
 投资人详情
 --------------------
 
-`http://mobile.tonghs.me/v2/user/detail <http://mobile.tonghs.me/?url=http://mobile.tonghs.me/v2/user/detail&user_id=10839876&_=投资人详情>`_
+`http://mobile.tonghs.me/v2/user/detail <http://mobile.tonghs.me/?url=http://mobile.tonghs.me/v2/user/detail&user_id=10839876&_=投资人详情>`__
 
 params::
 
@@ -318,7 +318,7 @@ return::
 创业者详情
 --------------------
 
-`http://mobile.tonghs.me/v2/user/detail <http://mobile.tonghs.me/?url=http://mobile.tonghs.me/v2/user/detail&user_id=10879982&_=创业者详情>`_
+`http://mobile.tonghs.me/v2/user/detail <http://mobile.tonghs.me/?url=http://mobile.tonghs.me/v2/user/detail&user_id=10879982&_=创业者详情>`__
 
 params::
 
