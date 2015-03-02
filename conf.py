@@ -8,7 +8,7 @@ from docutils.utils import get_source_line
 
 
 def _warn_node(self, msg, node):
-""" Monkey patch to ignore nonlocal image error """
+    """ Monkey patch to ignore nonlocal image error """
     if not msg.startswith('nonlocal image URI found:'):
         self._warnfunc(msg, '%s:%s' % get_source_line(node))
 
@@ -57,6 +57,9 @@ coverage_ignore_functions = [
 ]
 
 html_favicon = 'favicon.ico'
+
+# nore README.rst
+exclude_patterns = ['README.rst']
 
 latex_documents = [
     ('documentation', 'manual', False),
