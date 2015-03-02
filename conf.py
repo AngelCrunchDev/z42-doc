@@ -8,8 +8,8 @@ from docutils.utils import get_source_line
 
 
 def _warn_node(self, msg, node):
-    """ Monkey patch to ignore nonlocal image error """
-    if not msg.startswith('nonlocal image URI found:'):
+    """ Monkey patch to ignore specific errors """
+    if not msg.startswith(('py:obj reference target not found',)):
         self._warnfunc(msg, '%s:%s' % get_source_line(node))
 
 sphinx.environment.BuildEnvironment.warn_node = _warn_node
@@ -63,7 +63,7 @@ exclude_patterns = ['README.rst']
 
 latex_documents = [
     ('documentation', 'manual', False),
-    ]
+]
 
 # HACK: sphinx has limited support for substitutions with the |version|
 # variable, but there doesn't appear to be any way to use this in a link
