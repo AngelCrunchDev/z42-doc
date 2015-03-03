@@ -6,6 +6,8 @@ VPS 开发服务器初始配置
 
 :作者: 王然 kxxoling@gmail.com
 
+注：部分内容已失效
+
 
 将域名配置到 DNSPOD
 -----------------------
@@ -88,50 +90,12 @@ fork `42web 源代码 <https://bitbucket.org/zuroc/42web>`_
 在 ~/42web/zapp/SITE/misc/once 目录中运行脚本 ./init.sh
 （~/42web/zapp/SITE/misc/once/init.sh ）
 
-修改 ~/42web/zapp/SITE/misc/config/nginx/vps1884/zz.conf 内容如下::
-
-    upstream hi-acg_com{
-          server 127.0.0.1:4222  max_fails=3  fail_timeout=10s;
-    }
-    server {
-        server_name doc.hi-acg.com;
-        location /{
-            root /home/zz/42web/static/doc/build/html;
-        }
-    }
-    server {
-        server_name hi-acg.com *.hi-acg.com;
-    
-        location ~ ^/(favicon\.ico|crossdomain\.xml|robots.txt) {
-            expires max;
-            root /home/zz/42web/static/SITE;
-        }
-    
-        location /{
-            expires -1;
-            proxy_set_header Host $host;
-            proxy_pass http://hi-acg_com;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            access_log /var/log/nginx/hi-acg.com.access_log main;
-            error_log /var/log/nginx/hi-acg.com.error_log info;
-        }
-        location /css{
-            expires -1;
-            root /home/zz/42web;
-        }
-        location /js{
-            expires -1;
-            root /home/zz/42web;
-        }
-    }
-
 
 在 ~/42web/zapp/SITE/misc/config/_host/主机名.py 文件修改为如下内容，并注意将 HOST 修改为自己的域名::
 
     import _env
     from z42 import config
-    
+
     def prepare(o):
         config.SMTP.SENDER = config.SMTP.USERNAME = 'postmaster@42.sendcloud.org'
         config.SMTP.PASSWORD = '密码见Google Docs'
@@ -139,9 +103,9 @@ fork `42web 源代码 <https://bitbucket.org/zuroc/42web>`_
         config.HOST = "hi-acg.com"
         config.MYSQL_PASSWORD = "密码见Google Docs"
         config.MYSQL_HOST = "127.0.0.1"
-        config.MYSQL_USER = "zz"   
+        config.MYSQL_USER = "zz"
 
- 
+
     def finish(o):
         pass
 
@@ -153,7 +117,7 @@ fork `42web 源代码 <https://bitbucket.org/zuroc/42web>`_
     ~/42web/zapp/SITE/dev.sh
 
 如开发过程中涉及到邮件功能，需要启另外一个脚本::
-    
+
     python ~/42web/zapp/SITE/model/gearman/server/run.py
 
 （如需要启动 Gearman 请输入 `sudo service gearmand restart` ）

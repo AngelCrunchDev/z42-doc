@@ -10,7 +10,7 @@ HTML + CSS
 #. `HTML中文手册 <https://bitbucket.org/zuroc/42qu-school/src/02ffbde7b7e4/book/html.chm>`_
 
 #. `CSS中文手册 <https://bitbucket.org/zuroc/42qu-school/src/02ffbde7b7e4/book/css.chm>`_
-    
+
 #. `CSS3 系列教程 <http://www.blueidea.com/tech/web/2009/6460.asp>`_
 
 #. `Javascript教程 <http://www.w3school.com.cn/js/index.asp>`_
@@ -24,7 +24,7 @@ HTML + CSS
 
 #. `Aliceui 支付宝的前端框架 <http://aliceui.org/>`_
 
-Javascript 
+Javascript
 =====================================================================
 
 基本库
@@ -38,7 +38,7 @@ Javascript
 #. `Tag-it 标签 <http://aehlke.github.io/tag-it/examples.html>`_
 #. `imgareaselect图片剪裁 <http://odyniec.net/projects/imgareaselect/>`_
 #. `Highlight文字高亮 <http://unwrongest.com/projects/highlight/>`_
-#. `FancyBox弹出框 <http://fancybox.net/>`_ 
+#. `FancyBox弹出框 <http://fancybox.net/>`_
 #. `Poshy Tip jQuery Plugin 消息提示 <http://vadikom.com/demos/poshytip/>`_
 #. `摄像头拍照 <https://github.com/jhuckaby/webcamjs>`_
 
@@ -69,4 +69,3 @@ Javascript
 
 #. `stathat.com 在线统计图表 <https://www.stathat.com>`_
 
- 
