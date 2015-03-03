@@ -15,6 +15,5 @@
     skillstack/index
     devtools/index
     sso/index
-    todo
     kp
     pay
