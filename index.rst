@@ -6,8 +6,6 @@
     :maxdepth: 2
 
     team/*
-    web/*
-    animate/*
     api/*
     backend/index
     database/index
