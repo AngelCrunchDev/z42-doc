@@ -34,6 +34,8 @@
 
 复制按钮对应的 Unicode 编码，如 `&#xe600;` 即可在项目中作为文字使用。
 
+在线演示： http://angelcrunchdev.github.io/z42-doc/fonticon.html
+
 注：文件类型请选择 Unicode（默认）而非 FontClass。
 
 
