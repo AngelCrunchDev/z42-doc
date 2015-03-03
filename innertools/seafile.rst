@@ -31,13 +31,13 @@ seafile支持windows、mac、linux以及苹果和android手机，下载适合的
 
 这里以ubuntu下的客户端为例说明客户端使用方法
 
-1. 登陆 
+1. 登录
 
    服务器处填入http://seafile.mushapi.com
 
    填入邮箱和密码
 
-   .. image:: _static/login.png
+   .. image:: ../_static/login.png
 
 #. 创建资料库
 
@@ -45,48 +45,48 @@ seafile支持windows、mac、linux以及苹果和android手机，下载适合的
 
    #. 从客户端创建
 
-   .. image:: _static/main.png
+   .. image:: ../_static/main.png
 
-#. 创建和加入群组 
-   
+#. 创建和加入群组
+
    创建和加入群组的操作需要在 **网页** 上进行，所有用户都可以创建群组，群组的创建者自动成为该群组的管理员，其他成员申请加入该群组时需要群组管理员批准。
 
-   1. 创建群组 
+   1. 创建群组
          登陆到seafile后，点击上方导航条的 **群组** 然后再点击下拉菜单中的 **所有群组** 。
-         
-         .. image:: _static/addgroup.png 
+
+         .. image:: ../_static/addgroup.png
 
          在 **我的群组** 中点击 **创建群组** 按钮，输入群组相关信息完成创建。
-         
-         .. image:: _static/addgroup2.png
-   
+
+         .. image:: ../_static/addgroup2.png
+
    #. 加入群组
          如何加入群组
 
    #. 管理员审核加入群组的请求
          有用户申请加入群组后，群组管理员的首页上会显示一个通知，如下图所示
-         
-         .. image:: _static/unreadnotify.png
-         
+
+         .. image:: ../_static/unreadnotify.png
+
          点击那个小铃铛，打开通知页面，首先点击该用户。
-         
-         .. image:: _static/notify.png 
-         
+
+         .. image:: ../_static/notify.png
+
          然后将该用户添加到你的通讯录里
 
-         .. image:: _static/addtogroup.png
+         .. image:: ../_static/addtogroup.png
 
          最后在 **群组** 的 **管理** 里从通讯录中将该用户添加到群组。（我知道这里的操作很蠢，但我并没发现别的途径，如果有请告诉我）
 
-         .. image:: _static/addusertogroup.png
+         .. image:: ../_static/addusertogroup.png
 
-         .. image:: _static/aaaaa.png
+         .. image:: ../_static/aaaaa.png
 
-#. 共享资料库 
-   
+#. 共享资料库
+
    资料库有三种共享方式，共享给个人、共享给群组、共享给机构。
 
-   1. 共享给个人 
+   1. 共享给个人
          通过个人的邮箱共享，共享之后只有指定的用户可以访问该资料库。
 
    #. 共享给群组
@@ -99,5 +99,5 @@ seafile支持windows、mac、linux以及苹果和android手机，下载适合的
 
    右单击要同步的资料库，选择‘同步该资料库’选项，未同步的资料库的图标显示为一个云彩，同步完成的显示成一个绿色的对号。
 
-   .. image:: _static/sync.png
+   .. image:: ../_static/sync.png
 
