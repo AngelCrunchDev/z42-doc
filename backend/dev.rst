@@ -1,8 +1,31 @@
-.. _view_dev:
+.. _dev:
 
 ==================================================
 天使汇开发流程简介
 ==================================================
+
+
+python
+------
+
+-  闭包
+-  正则表达式
+-  collections
+-  defaultdict
+-  itertools
+-  enum
+-  IntEnum
+-  enumerate
+-  time.mktime(time.strptime("2007-03-04 21:08:12", "%Y-%m-%d
+   %H:%M:%S"))
+-  dateparser
+-  python 的 新式类与旧式类 ， 以及super的意义
+
+
+supervisor
+----------
+
+-  线上服务器如何看异常
 
 
 开发流程
@@ -17,6 +40,26 @@
 * CSS 样式文件 css/SITE/auth/模块名.css
 
 并在 `_url.py` 中注册视图。
+
+
+-  新建url页面
+-  render
+-  css，js的引用
+-  merge.conf
+-  新建css，js，修改merge.conf需要重启开发服务器
+-  View的类型
+-  分页
+-  在页面取得当前用户
+-  搜索
+-  自动补全
+-  gearman 异步调用
+-  JsOb
+-  rendermail 发送邮件
+-  redis key的定义 ， R.
+-  model 中 使用绝对路径import以防止redis提示key重复定义
+-  import \_env
+-  配置文件 的 定义 与 自适应
+-  make.py 生成配置文件
 
 
 Mako 模板
@@ -105,3 +148,21 @@ web 开发使用的框架是修改过的 Tornado，需要通过装饰器注册 U
 register class 就是视图 Handler 的最简写法。对于 Ajax 视图，Handler 名意义不大，可以使用下划线命名。
 需要返回错误提示的视图，可以继承 JsonErrView。View 的继承用法详见 :ref:`views`
 
+
+上线流程
+-----------------
+
+-  修改函数接口后， 用ag查找并修改些调用过的地方
+-  函数命名规则 ：名词在前动词在后 ， 常用命名如下
+
+-  user\_new 新建
+-  user\_rm 删除
+-  user\_dumps 返回一个包含各种相关数据的json对象
+-  user\_id\_list\_by\_com\_id(limit, offset) 查询
+-  user\_new 新建
+-  user\_rm 删除
+-  user\_dumps 返回一个包含各种相关数据的json对象
+-  user\_id\_list\_by\_com\_id(limit, offset) 查询
+-  user\_id\_count\_by\_com\_id
+
+我们通常把user\_id作为第一个参数

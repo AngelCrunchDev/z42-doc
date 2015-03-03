@@ -14,7 +14,8 @@
     innertools/index
     skillstack/index
     devtools/index
-    sso
+    sso/index
     todo
     mush
     kp
+    pay
