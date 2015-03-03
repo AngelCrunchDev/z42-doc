@@ -7,4 +7,5 @@
     :glob:
     :maxdepth: 2
 
+    *
 

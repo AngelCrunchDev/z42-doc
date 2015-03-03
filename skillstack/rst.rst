@@ -494,7 +494,7 @@ rST排版技巧
 ::
 
   .. _fig_0601:
-  .. figure:: _static/figs/magic-2.png
+  .. figure:: ../_static/figs/magic-2.png
 
      插图 6-1 神奇的2
 
@@ -504,7 +504,7 @@ rST排版技巧
 
 
 .. _fig_0601:
-.. figure:: _static/figs/magic-2.png
+.. figure:: ../_static/figs/magic-2.png
 
    插图 6-1 神奇的2
 

@@ -6,28 +6,16 @@
     :maxdepth: 2
 
     team/*
-    kp
-    xshell
-    seafile
     web/*
-    vps
-    rst
-    vim
-    hg
-    shell
-    42qucc
-    dev/*
-    ipython
-    hyperestraier
-    database/*
     animate/*
     api/*
-    mvvm
-    plan
+    backend/index
+    database/index
+    codingguide/index
+    frontend/index
+    innertools/index
+    skillstack/index
+    devtools/index
     sso
     todo
-    backend/*
-    codingguide/*
-    frontend/*
-    innertools/*
-    skillstack/*
+    kp
