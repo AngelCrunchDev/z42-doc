@@ -26,3 +26,8 @@
     plan
     sso
     todo
+    backend/*
+    codingguide/*
+    frontend/*
+    innertools/*
+    skillstack/*
