@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>FontIcon 演示</title>
+        <style>
+            @font-face {
+              font-family: 'iconfont';
+              src: url('http://at.alicdn.com/t/font_1425368696_9550455.eot'); /* IE9*/
+              src: url('http://at.alicdn.com/t/font_1425368696_9550455.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+              url('http://at.alicdn.com/t/font_1425368696_9550455.woff') format('woff'), /* chrome、firefox */
+              url('http://at.alicdn.com/t/font_1425368696_9550455.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+              url('http://at.alicdn.com/t/font_1425368696_9550455.svg#iconfont') format('svg'); /* iOS 4.1- */
+            }
+            .icon {
+                font-family: iconfont;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>未添加 font-family 的效果：
+                <span>&#xe600;</span>
+            </p>
+            <p>添加 font-family 的效果：
+                <span class="icon">&#xe600;</icon>
+            </p>
+        <div>
+    </body>
+</html>
