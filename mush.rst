@@ -2,6 +2,29 @@
 蘑菇碎碎念
 ==================================================
 
+vim黑科技
+-----------------------
+
+1. 遇到gbk乱码囧木办
+   
+    ::
+
+        set encoding=utf-8
+        set fenc=cp936
+        set fileencodings=cp936,ucs-bom,utf-8
+        if v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)'
+            set ambiwidth=double
+        endif
+        set nobomb
+
+#. 粘贴后格式错乱怎么办
+
+   有的时候，在插入模式下从系统粘贴板粘贴文本到vim中会出现缩进异常的情况，为了解决这种问题，在粘贴前应该设置vim为粘贴模式并在粘贴完成后取消粘贴模式
+
+   `:set paste`
+
+   `:set nopaste`
+
 vim插件及使用
 -----------------------
 
@@ -11,7 +34,7 @@ vim插件及使用
 
     :lprev 跳到上一个
 
-2. 使用pyflakes进行语法检查 
+#. 使用pyflakes进行语法检查 
 
     :SyntasticCheck pyflakes
 
