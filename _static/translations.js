@@ -3,3 +3,4 @@ Documentation.addTranslations({"locale": "zh_CN", "plural_expr": "0", "messages"
 $(function(){
     $(".external").attr('target',"_blank")
 })
+/*fasag*/
