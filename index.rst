@@ -6,8 +6,6 @@
     :maxdepth: 2
 
     team/*
-    web/*
-    animate/*
     api/*
     backend/index
     database/index
@@ -17,6 +15,8 @@
     skillstack/index
     devtools/index
     mobile/index
-    sso
+    sso/index
     todo
+    mush
     kp
+    pay
