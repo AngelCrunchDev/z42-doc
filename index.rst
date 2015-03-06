@@ -16,6 +16,7 @@
     innertools/index
     skillstack/index
     devtools/index
+    mobile/index
     sso
     todo
     kp
