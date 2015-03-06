@@ -1,4 +1,3 @@
-
 .. _xshell: 
 
 xshell 客户端
@@ -10,8 +9,7 @@ xshell 客户端
 Xshell : 极好用的免费SSH客户端 
 -------------------------------------------
 
-`点此下载 Xshell <http://dl.pconline.com.cn/download/59166.html>`_
-`点此下载 Xftp <http://dl.pconline.com.cn/download/61110.html>`_
+`点此下载 Xshell <http://www.onlinedown.net/softdown/36383_2.htm>`_
 
 
 创建session
