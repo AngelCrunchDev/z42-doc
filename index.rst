@@ -3,7 +3,7 @@
 
 .. toctree::
     :glob:
-    :maxdepth: 2
+    :maxdepth: 1
 
     team/*
     api/*
@@ -15,6 +15,4 @@
     skillstack/index
     devtools/index
     sso/index
-    mush
-    kp
-    pay
+    *
