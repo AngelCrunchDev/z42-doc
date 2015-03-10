@@ -1,9 +1,10 @@
 .. include:: README.rst
 
+.. include:: meta.rst
 
 .. toctree::
     :glob:
-    :maxdepth: 2
+    :maxdepth: 1
 
     team/*
     api/*
@@ -16,7 +17,4 @@
     devtools/index
     mobile/index
     sso/index
-    todo
-    mush
-    kp
-    pay
+    *
