@@ -19,16 +19,16 @@ hg 即 Mercurial，是一个跨平台的分布式版本控制软件，主要由P
 hg 基本流程
 -----------------------
 
-以 42web https://bitbucket.org/zuroc/42web 为例，演示 hg 开发流程。
+以 42web https://bitbucket.org/z42/z42 为例，演示 hg 开发流程。
 
 1. 从远程仓库复制到本地
     https 协议从远程仓库获取代码::
 
-        hg clone https://bitbucket.org/zuroc/42web
+        hg clone https://bitbucket.org/z42/z42
 
     或者也可以通过 ssh 协议::
 
-        hg clone ssh://hg@bitbucket.org/zuroc/42web
+        hg clone ssh://hg@bitbucket.org/z42/z42
 
 #. 添加新创建的文件::
 
@@ -63,7 +63,7 @@ hg 基本流程
 
 #. 发起 pull request
 
-    在 https://bitbucket.org/你的用户名/42web/pull-request/new 发起一个新的 pull request
+    在 https://bitbucket.org/你的用户名/项目名/pull-request/new 发起一个新的 pull request
 
 
 解决冲突
