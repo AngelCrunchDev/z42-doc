@@ -1,5 +1,6 @@
 .. include:: README.rst
 
+.. include:: meta.rst
 
 .. toctree::
     :glob:
