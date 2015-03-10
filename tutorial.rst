@@ -40,23 +40,33 @@ View 与 `tornado.web.RequestHandler`
 
 \@route
 
-root.py ::
+.. code-block:: python
 
+    # root.py
+    ...
     @route
     class hello_world(View):
         def get(self):
             o = 'world'
             self.render()
-
+    ...
 
 
 STEP3: 第一个 Mako 文件
 -----------------------------------
 
-mako ::
+.. code-block:: mako
 
     <h1>Hello, ${ o }</h1>
 
+
+
+STEP3: 第一个 Plim 文件
+-----------------------------------
+
+.. code-block:: mako
+
+    <h1>Hello, ${ o }</h1>
 
 
 STEP3: 第一个 SCSS/SASS 文件
