@@ -122,3 +122,28 @@ ssh客户端配置文件
                     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             }
         } 
+
+dnsmasq配置
+^^^^^^^^^^^^^^^^^^^^^^^
+
+1. 解析和泛解析
+    
+    在`/etc/dnsmasq.conf`中添加下面的代码
+
+    ::
+
+        address=/mushapi.info/192.168.10.169
+        address=/*.mushapi.info/192.168.10.169
+
+#. cname解析
+
+   假设我们要将a.com用cname指向b.com，则需要首先在本地hosts中增加b.com的解析，再向/etc/dnsmasq.conf中添加cname解析。
+
+   修改/etc/hosts,增加一行
+
+   `<some ip> b.com`
+
+   在dnsmasq.conf中增加
+
+   `cname=a.com,b.com`
+
