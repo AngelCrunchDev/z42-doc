@@ -150,6 +150,8 @@ dnsmasq配置
 多线程下载工具axel
 ^^^^^^^^^^^^^^^^^^^^^^^
 
+curl和wget是单线程的，使用这货的多线程方式下载文件会显著提高下载速度
+
 1. 安装
 
    gentoo下 `sudo emerge axel`
