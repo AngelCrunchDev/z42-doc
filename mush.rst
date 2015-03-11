@@ -147,3 +147,17 @@ dnsmasq配置
 
    `cname=a.com,b.com`
 
+多线程下载工具axel
+^^^^^^^^^^^^^^^^^^^^^^^
+
+1. 安装
+
+   gentoo下 `sudo emerge axel`
+
+   centos下 `sudo yum install axel`
+
+#. 使用
+
+   ::
+
+       axel -n <线程数> -o <保存文件的目录> <下载地址>
