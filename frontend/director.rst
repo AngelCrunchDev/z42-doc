@@ -22,7 +22,7 @@ director.js
         <meta charset="utf-8">
         <title>Director Example</title>
         <div id="results"></div>
-        <script src="/application/html/js/flatiron/director/director.min.js"></script>
+        <script src="http://www.javascriptoo.com/application/html/js/flatiron/director/director.min.js"></script>
         <script>
         var r = document.getElementById('results');
             var data = {
