@@ -73,7 +73,7 @@ ADD
 向镜像中添加特定文件，可以是主机中或者 web 文件。以 WordPress 的
 Dockerfile 为例：
 
-.. code:: dokcerfile
+.. code:: dockerfile
 
     ADD http://wordpress.org/latest.zip /var/www/wordpress.zip
 
@@ -264,7 +264,7 @@ WSGI 应用
 
 标准的 Python 应用还需要提供一个 requirements.txt 记录其依赖——flask 和 redis：
 
-.. code-block:: txt
+.. code-block:: text
 
     flask
     redis
