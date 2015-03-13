@@ -79,6 +79,35 @@ ssh客户端配置文件
 
 在~/.ssh/目录下创建一个config文件，在config中写入相应的配置后就可以使用 `ssh \<主机别名\>` 直接连接服务器了
 
+多线程下载工具axel
+^^^^^^^^^^^^^^^^^^^^^^^
+
+curl和wget是单线程的，使用这货的多线程方式下载文件会显著提高下载速度
+
+1. 安装
+
+   gentoo下 `sudo emerge axel`
+
+   centos下 `sudo yum install axel`
+
+#. 使用
+
+   ::
+
+       axel -n <线程数> -o <保存文件的目录> <下载地址>
+
+docker 的一个奇怪命令
+^^^^^^^^^^^^^^^^^^^^^^^
+
+docker run -e MYSQL_ROOT_PASSWORD=rstfsgbcedh --expose 3306  --entrypoint="/entrypoint.sh" --name mysql-hg -d mush/mysql-hg mysqld
+
+如果遇到 TERM environment variable not set. 就执行 `export TERM=dumb`
+ 
+redis批量删除key
+^^^^^^^^^^^^^^^^^^^^^^^
+
+`EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 investment_0*`
+
 开发服务器环境介绍
 -----------------------
 
@@ -147,19 +176,3 @@ dnsmasq配置
 
    `cname=a.com,b.com`
 
-多线程下载工具axel
-^^^^^^^^^^^^^^^^^^^^^^^
-
-curl和wget是单线程的，使用这货的多线程方式下载文件会显著提高下载速度
-
-1. 安装
-
-   gentoo下 `sudo emerge axel`
-
-   centos下 `sudo yum install axel`
-
-#. 使用
-
-   ::
-
-       axel -n <线程数> -o <保存文件的目录> <下载地址>
