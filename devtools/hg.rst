@@ -19,16 +19,16 @@ hg 即 Mercurial，是一个跨平台的分布式版本控制软件，主要由P
 hg 基本流程
 -----------------------
 
-以 42web https://bitbucket.org/zuroc/42web 为例，演示 hg 开发流程。
+以 42web https://bitbucket.org/z42/z42 为例，演示 hg 开发流程。
 
 1. 从远程仓库复制到本地
     https 协议从远程仓库获取代码::
 
-        hg clone https://bitbucket.org/zuroc/42web
+        hg clone https://bitbucket.org/z42/z42
 
     或者也可以通过 ssh 协议::
 
-        hg clone ssh://hg@bitbucket.org/zuroc/42web
+        hg clone ssh://hg@bitbucket.org/z42/z42
 
 #. 添加新创建的文件::
 
@@ -63,7 +63,7 @@ hg 基本流程
 
 #. 发起 pull request
 
-    在 https://bitbucket.org/你的用户名/42web/pull-request/new 发起一个新的 pull request
+    在 https://bitbucket.org/你的用户名/项目名/pull-request/new 发起一个新的 pull request
 
 
 解决冲突
@@ -108,6 +108,39 @@ Tips
 为分隔符能够得到 SourceTree 这样的图形化版本控制工具更好的支持。
 
 分支名中不需要添加创建者，因为一个分支通常会有多个开发者（一个前端一个后端）同时使用。
+
+
+内部 Hg 服务器
+--------------
+
+公司内部基于 `Kallithea <https://kallithea-scm.org/>`_ 开源系统搭建了一套 Hg web
+服务，内网配置 DNS 后可访问 `hg.pe.vc <http://hg.pe.vc/>`_ 注册账号并 fork 所需要的项目。
+使用流程如下：
+
+1. `注册 <http://hg.pe.vc/_admin/register>`_ 并联系管理员激活
+
+#. 登录并 `添加项目组 <http://hg.pe.vc/_admin/repo_groups/new>`_ 。
+
+#. 前往 ``http://hg.pe.vc/<项目名>/fork`` 页面 fork 相应的项目。
+
+其余操作和 GitHub、BitBucket 并无显著区别。
+
+配置 Hg 记住密码功能
+~~~~~~~~~~~~~~~~~~~~
+
+通过 Hg HTTP 协议操作项目时，往往需要重复输入密码，不像 ssh 方式便捷，可以通过插件实现 Hg 记住密码功能：
+
+.. code-block:: shell
+
+    pip install mercurial_keyring
+
+在 `~/.hgrc` 文件后写入：
+
+.. code-block:: shell
+
+    [extensions]
+    mercurial_keyring =
+
 
 
 扩展阅读
