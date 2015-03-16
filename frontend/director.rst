@@ -1,4 +1,4 @@
-.. _director:
+.. _director_:
 
 ===========
 director.js
