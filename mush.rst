@@ -2,6 +2,64 @@
 蘑菇碎碎念
 ==================================================
 
+HG
+-----------------------
+
+fetch 某个分支
+
+`hg fetch http://xxx.xxx.xxx.xxx:8000 -r <分支名>`
+
+在docker中互相fetch
+
+docker额外映射了一个端口到8000,可以通过这个端口
+
+翻墙有道
+-----------------------
+
+gentoo下emerge访问墙外资源
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. emerge设置HTTP代理
+
+   在 `/etc/make.conf` 写入代理配置
+
+   ::
+      
+      http_proxy="http://127.0.0.1:8080"
+      https_proxy="http://127.0.0.1:8080"
+
+#. 安装配置HTTP代理工具polipo
+
+    `sudo emerge polipo` 即可完成安装,安装后在 `/etc/polipo/conf` 中写入
+
+   ::
+
+      daemonise=false
+      diskCacheRoot=/var/cache/polipo/
+      proxyAddress=127.0.0.1
+      proxyName=localhost
+      cacheIsShared=true
+      allowedClients=127.0.0.1
+      proxyPort=8080
+      socksParentProxy = 127.0.0.1:1080
+      socksProxyType = socks5
+
+#. 配置shadowsocks
+
+   ::
+
+      {   
+          "server":"vpn.mushapi.com",
+          "server_port":1081,
+          "local_address": "127.0.0.1",
+          "local_port":1080,
+          "password":"btyh17mxy",
+          "timeout":300,
+          "method":"aes-256-cfb",
+          "fast_open": false,
+          "workers": 1
+      }
+
 vim黑科技
 -----------------------
 
@@ -79,6 +137,39 @@ ssh客户端配置文件
 
 在~/.ssh/目录下创建一个config文件，在config中写入相应的配置后就可以使用 `ssh \<主机别名\>` 直接连接服务器了
 
+多线程下载工具axel
+^^^^^^^^^^^^^^^^^^^^^^^
+
+curl和wget是单线程的，使用这货的多线程方式下载文件会显著提高下载速度
+
+1. 安装
+
+   gentoo下 `sudo emerge axel`
+
+   centos下 `sudo yum install axel`
+
+#. 使用
+
+   ::
+
+       axel -n <线程数> -o <保存文件的目录> <下载地址>
+
+docker 的一个奇怪命令
+^^^^^^^^^^^^^^^^^^^^^^^
+
+docker run -e MYSQL_ROOT_PASSWORD=rstfsgbcedh --expose 3306  --entrypoint="/entrypoint.sh" --name mysql-hg -d mush/mysql-hg mysqld
+
+如果遇到 TERM environment variable not set. 就执行 `export TERM=dumb`
+ 
+redis批量删除key
+^^^^^^^^^^^^^^^^^^^^^^^
+
+`EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 investment_0*`
+
+`EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 s_idx_cache_*`
+
+`EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 autocom*`
+
 开发服务器环境介绍
 -----------------------
 
@@ -110,7 +201,7 @@ ssh客户端配置文件
 
    在/etc/nginx/conf.d中加入你的反向代理配置。
 
-   ::
+.. code-block:: nginx
 
         server {
             listen 80;
@@ -147,3 +238,42 @@ dnsmasq配置
 
    `cname=a.com,b.com`
 
+不要依赖工具
+-----------------------
+
+
+redis分析工具
+^^^^^^^^^^^^^^^^^^^^^^^
+
+https://github.com/sripathikrishnan/redis-rdb-tools
+
+Python抽象方法
+-----------------------
+
+Python中抽象方法有两种实现,一是通过抛出 `NotImplementedError` 异常, 而是通过abc模块.
+
+例如
+
+.. code-block:: python
+
+    class Base:
+        def foo(self):
+            raise NotImplementedError()
+
+        def bar(self):
+            raise NotImplementedError() 
+
+和
+
+.. code-block:: python
+
+    from abc import ABCMeta, abstractmethod
+
+    class Base(metaclass=ABCMeta):
+        @abstractmethod
+        def foo(self):
+            pass
+
+        @abstractmethod
+        def bar(self):
+            pass
