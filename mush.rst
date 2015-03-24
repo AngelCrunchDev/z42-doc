@@ -2,6 +2,64 @@
 蘑菇碎碎念
 ==================================================
 
+HG
+-----------------------
+
+fetch 某个分支
+
+`hg fetch http://xxx.xxx.xxx.xxx:8000 -r <分支名>`
+
+在docker中互相fetch
+
+docker额外映射了一个端口到8000,可以通过这个端口
+
+翻墙有道
+-----------------------
+
+gentoo下emerge访问墙外资源
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. emerge设置HTTP代理
+
+   在 `/etc/make.conf` 写入代理配置
+
+   ::
+      
+      http_proxy="http://127.0.0.1:8080"
+      https_proxy="http://127.0.0.1:8080"
+
+#. 安装配置HTTP代理工具polipo
+
+    `sudo emerge polipo` 即可完成安装,安装后在 `/etc/polipo/conf` 中写入
+
+   ::
+
+      daemonise=false
+      diskCacheRoot=/var/cache/polipo/
+      proxyAddress=127.0.0.1
+      proxyName=localhost
+      cacheIsShared=true
+      allowedClients=127.0.0.1
+      proxyPort=8080
+      socksParentProxy = 127.0.0.1:1080
+      socksProxyType = socks5
+
+#. 配置shadowsocks
+
+   ::
+
+      {   
+          "server":"vpn.mushapi.com",
+          "server_port":1081,
+          "local_address": "127.0.0.1",
+          "local_port":1080,
+          "password":"btyh17mxy",
+          "timeout":300,
+          "method":"aes-256-cfb",
+          "fast_open": false,
+          "workers": 1
+      }
+
 vim黑科技
 -----------------------
 
@@ -108,6 +166,10 @@ redis批量删除key
 
 `EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 investment_0*`
 
+`EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 s_idx_cache_*`
+
+`EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 autocom*`
+
 开发服务器环境介绍
 -----------------------
 
@@ -176,3 +238,11 @@ dnsmasq配置
 
    `cname=a.com,b.com`
 
+不要依赖工具
+-----------------------
+
+
+redis分析工具
+^^^^^^^^^^^^^^^^^^^^^^^
+
+https://github.com/sripathikrishnan/redis-rdb-tools
