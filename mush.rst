@@ -201,7 +201,7 @@ redis批量删除key
 
    在/etc/nginx/conf.d中加入你的反向代理配置。
 
-   ::
+.. code-block:: nginx
 
         server {
             listen 80;
@@ -246,3 +246,34 @@ redis分析工具
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 https://github.com/sripathikrishnan/redis-rdb-tools
+
+Python抽象方法
+-----------------------
+
+Python中抽象方法有两种实现,一是通过抛出 `NotImplementedError` 异常, 而是通过abc模块.
+
+例如
+
+.. code-block:: python
+
+    class Base:
+        def foo(self):
+            raise NotImplementedError()
+
+        def bar(self):
+            raise NotImplementedError() 
+
+和
+
+.. code-block:: python
+
+    from abc import ABCMeta, abstractmethod
+
+    class Base(metaclass=ABCMeta):
+        @abstractmethod
+        def foo(self):
+            pass
+
+        @abstractmethod
+        def bar(self):
+            pass
