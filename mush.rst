@@ -295,11 +295,13 @@ Python中抽象方法有两种实现,一是通过抛出 `NotImplementedError` �
 go语言是个好东西,吉祥物都那么萌.
 
 ::
+
     go build  -a -ldflags '-s' <要编译的Go文件>
 
 然后再DockerFile里这么写
 
 ::
+
     FROM scratch
     ADD <编译粗来的可执行文件> /
     ENTRYPOINT ["<编译粗来的可执行文件>"]
