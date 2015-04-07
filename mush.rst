@@ -283,8 +283,28 @@ Python中抽象方法有两种实现,一是通过抛出 `NotImplementedError` �
 -----------------------
 
 压缩Docker镜像的体积
+^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
  
     docker export <要压缩的容器> | docker import - <新镜像名字>
+
+使用go语言编写一个可以放到Docker中的静态可执行文件并生成为一个Docker容器
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+go语言是个好东西,吉祥物都那么萌.
+
+::
+
+    go build  -a -ldflags '-s' <要编译的Go文件>
+
+然后再DockerFile里这么写
+
+::
+
+    FROM scratch
+    ADD <编译粗来的可执行文件> /
+    ENTRYPOINT ["<编译粗来的可执行文件>"]
+
+我研究这个问题的起因是我只想弄个echo到Docker里面,因为你run一个Docker的时候必须指定一个运行的命令.但我把echo这个可执行文件搞进去发现不能用.具体的可以参看这里,http://blog.xebia.com/2014/07/04/create-the-smallest-possible-docker-container/
 
