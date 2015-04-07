@@ -164,11 +164,12 @@ docker run -e MYSQL_ROOT_PASSWORD=rstfsgbcedh --expose 3306  --entrypoint="/entr
 redis批量删除key
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-`EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 investment_0*`
+::
+    EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 investment_0*
 
-`EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 s_idx_cache_*`
+    EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 s_idx_cache_*
 
-`EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 autocom*`
+    EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 autocom*
 
 开发服务器环境介绍
 -----------------------
@@ -277,3 +278,13 @@ Python中抽象方法有两种实现,一是通过抛出 `NotImplementedError` �
         @abstractmethod
         def bar(self):
             pass
+
+使用Docker的正确姿势
+-----------------------
+
+压缩Docker镜像的体积
+
+::
+ 
+    docker export <要压缩的容器> | docker import - <新镜像名字>
+
