@@ -101,9 +101,13 @@ iptables
 
 1. 列出所有规则
 
-   `iptables -nvL  -t nat --line-number`
+   `iptables -nvL  -t nat --line-number <chain name>`
 
    列出nat表的所有规则并显示行号
+
+#. 清零流量统计
+
+   `iptables -Z <Chain>`
 
 #. 删除
 
@@ -165,6 +169,7 @@ redis批量删除key
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
+
     EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 investment_0*
 
     EVAL "local keys = redis.call('keys', ARGV[1]) \n for i=1,#keys,5000 do \n redis.call('del', unpack(keys, i, math.min(i+4999, #keys))) \n end \n return keys" 0 s_idx_cache_*
@@ -307,4 +312,10 @@ go语言是个好东西,吉祥物都那么萌.
     ENTRYPOINT ["<编译粗来的可执行文件>"]
 
 我研究这个问题的起因是我只想弄个echo到Docker里面,因为你run一个Docker的时候必须指定一个运行的命令.但我把echo这个可执行文件搞进去发现不能用.具体的可以参看这里,http://blog.xebia.com/2014/07/04/create-the-smallest-possible-docker-container/
+
+监控Docker容器内存使用情况
+
+::
+
+    cat /sys/fs/cgroup/memory/system.slice/docker-88018f8043d00669bbf865855ebc8a6ccc93a04ce588111e01d4e63739250340.scope/memory.stat
 
