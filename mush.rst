@@ -5,13 +5,21 @@
 HG
 -----------------------
 
-fetch 某个分支
+1. fetch 某个分支
 
-`hg fetch http://xxx.xxx.xxx.xxx:8000 -r <分支名>`
+   `hg fetch http://xxx.xxx.xxx.xxx:8000 -r <分支名>`
 
-在docker中互相fetch
+#. 在docker中互相fetch
 
-docker额外映射了一个端口到8000,可以通过这个端口
+   docker额外映射了一个端口到8000,可以通过这个端口
+
+#. 关闭无名分支
+
+   ::
+
+      hg update -r <版本号>
+      hg commit --close-branch -m 'Closing old branch'
+      hg update -C default
 
 翻墙有道
 -----------------------
