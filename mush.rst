@@ -327,3 +327,35 @@ go语言是个好东西,吉祥物都那么萌.
 
     cat /sys/fs/cgroup/memory/system.slice/docker-88018f8043d00669bbf865855ebc8a6ccc93a04ce588111e01d4e63739250340.scope/memory.stat
 
+应对怪需求的好方法
+-----------------------
+
+关于dict顺序的问题
+^^^^^^^^^^^^^^^^^^^^^^^
+
+经常的我们有一些字段为枚举,然后在页面上要用select的形式展现,往往善变的产品会要求改变下拉菜单条目出现的顺序,我们可以这样应对.
+
+.. code-block:: html
+
+    <select name="stage"  ms_duplex="o.com_base_info.stage" class="spinput">
+        <option value="0">请选择阶段</option>
+        % for k, v in COM_STAGE_DICT.iteritems():
+        <option value="${k.value}">${v}：${COM_STAGE_COMMENT_DICT[k.value]}</option>
+        % endfor
+    </select>
+
+.. code-block:: python
+
+    COM_STAGE_DICT = collections.OrderedDict()
+    COM_STAGE_DICT[COM_INFO_STAGE.CONCEPT] = '概念阶段'
+    COM_STAGE_DICT[COM_INFO_STAGE.DEVELOPING] = '研发阶段'
+    COM_STAGE_DICT[COM_INFO_STAGE.RELEASED] = '正式发布'
+    COM_STAGE_DICT[COM_INFO_STAGE.GETUSERS] = '已有用户'
+    COM_STAGE_DICT[COM_INFO_STAGE.PROFIT] = '已有收入'
+    # COM_STAGE_DICT = {
+    #     COM_INFO_STAGE.CONCEPT : '概念阶段',
+    #     COM_INFO_STAGE.DEVELOPING : '研发阶段',
+    #     COM_INFO_STAGE.RELEASED : '正式发布',
+    #     COM_INFO_STAGE.GETUSERS : '已有用户',
+    #     COM_INFO_STAGE.PROFIT : '已有收入',
+    # }   
