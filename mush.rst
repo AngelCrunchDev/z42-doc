@@ -169,6 +169,27 @@ ssh客户端配置文件
 
 在~/.ssh/目录下创建一个config文件，在config中写入相应的配置后就可以使用 `ssh \<主机别名\>` 直接连接服务器了
 
+保障服务器安全
+^^^^^^^^^^^^^^^^^^^^^^^
+
+1. 禁用密码登陆, 使用密钥登陆
+
+    编辑/etc/ssh/sshd_config
+
+    ::
+
+        PasswordAuthentication no
+
+
+#. 禁用root登陆
+
+    编辑/etc/ssh/sshd_config
+
+    ::
+
+        PermitRootLogin no
+
+
 多线程下载工具axel
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -193,6 +214,17 @@ docker run -e MYSQL_ROOT_PASSWORD=rstfsgbcedh --expose 3306  --entrypoint="/entr
 
 如果遇到 TERM environment variable not set. 就执行 `export TERM=dumb`
  
+redis in docker
+^^^^^^^^^^^^^^^^^^^^^^^
+
+当我们在使用docker提供redis服务时, 如果我们需要执行一个redis命令就需要使用 `docker exec <option> redis <command> redis-cli` 的形式.
+
+但是这一个问题, 如果使用-d的option, 它就会后台执行, 我们不知道其何时执行玩, 使用-i又会导致挂起, 下面是一个执行并退出的方法.
+
+.. code-block:: shell
+    
+    echo -e 'bgsave' | docker exec -i redis redis-cli
+
 redis批量删除key
 ^^^^^^^^^^^^^^^^^^^^^^^
 
